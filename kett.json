@@ -1,0 +1,89 @@
+[
+    {
+        "id": "c60d5299-7d99-423d-830a-0cd1949706cd",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/e2f786a1-48ad-4e4a-8796-f59d06b934bb/hunt_131122_01.jpg",
+            "headline": "বাজেটের আগে কর বৃদ্ধি ও ব্যয় হ্রাসের ঘোষণা যুজ্যের অর্থমন্ত্রীর",
+            "id": "c60d5299-7d99-423d-830a-0cd1949706cd"
+        }
+    },
+    {
+        "id": "8b627636-6034-4de2-bf3e-66f326ac5a54",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/b55f70a2-b599-493e-8a98-78ff401cc5f5/the_terminal_man_dies_131122.jpg",
+            "headline": "১৮ বছর প্যারিস বিমানবন্দরের টার্মিনালে বাস করা ইরানির মৃত্যু",
+            "id": "8b627636-6034-4de2-bf3e-66f326ac5a54"
+        }
+    },
+    {
+        "id": "d510bad5-1242-4c84-bb8d-3f8146dc017a",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/bcb472a3-6d7d-4eac-862b-73a487bc0506/west_seeking_militarise_southeast_131122.jpg",
+            "headline": "দক্ষিণপূর্ব এশিয়ার সামরিকীকরণ চাইছে পশ্চিমারা: ল্যাভরভ",
+            "id": "d510bad5-1242-4c84-bb8d-3f8146dc017a"
+        }
+    },
+    {
+        "id": "6118a0ab-755f-483b-91bd-609a731af4e2",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/91671faf-a8d7-4780-966c-20173222e9c7/world_war_aircrafts_131122_01.jpg",
+            "headline": "এয়ার শো চলাকালে টেক্সাসে মাঝ আকাশে ২ বিমানের সংঘর্ষ",
+            "id": "6118a0ab-755f-483b-91bd-609a731af4e2"
+        }
+    },
+    {
+        "id": "c0e57cb7-e3f4-4f33-8e8d-1caad25a70a7",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/2733d964-b206-400a-b570-5ce27b6666bd/coal_fired_power_station_greece_121122_01.jpeg",
+            "headline": "জীবাশ্ম জ্বালানি বিস্তার রোধ চুক্তি কী, কেন এই দাবি?",
+            "id": "c0e57cb7-e3f4-4f33-8e8d-1caad25a70a7"
+        }
+    },
+    {
+        "id": "d71c1fb6-347e-4be5-89fc-8e1f948254fa",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/f19399f3-c8e2-4342-8d46-57aa8108e5bf/Nevada_democrate_senator_win_131122_01.jpg",
+            "headline": "নেভাডায় জিতে সেনেটের নিয়ন্ত্রণ ধরে রাখল ডেমোক্র্যাটরা",
+            "id": "d71c1fb6-347e-4be5-89fc-8e1f948254fa"
+        }
+    },
+    {
+        "id": "1dca1757-ab53-4839-a64a-eee8c30ed2d3",
+        "associated-metadata": {},
+        "type": "story",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/ff0ec1a4-de37-4bce-8ea4-142e07d0b4b7/usa_121122_01.jpg",
+            "headline": "ভারত যত ইচ্ছা রাশিয়ার তেল কিনতে \u200dপারে: যুক্তরাষ্ট্রের অর্থমন্ত্রী",
+            "id": "1dca1757-ab53-4839-a64a-eee8c30ed2d3"
+        }
+    },
+    {
+        "id": 112737,
+        "associated-metadata": {},
+        "type": "collection",
+        "name": "এই বক্সের নিচের কিছুই ডিলিট করা যাবে না",
+        "slug": "dont-delete-below-contents",
+        "template": "default",
+        "story": {
+            "hero-image-s3-key": "bdnews24/2022-11/ff0ec1a4-de37-4bce-8ea4-142e07d0b4b7/usa_121122_01.jpg",
+            "headline": "এই বক্সের নিচের কিছুই ডিলিট করা যাবে না",
+            "id": "1dca1757-ab53-4839-a64a-eee8c30ed2d3"
+        },
+        "metadata": {
+            "cover-image": null
+        },
+        "collection-date": null
+    }
+]

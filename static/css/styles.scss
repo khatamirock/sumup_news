@@ -1,0 +1,356 @@
+// import scss
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import '__resol';
+@import '__homestl';
+
+@import '_flxgrd';
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d4d8f078;
+
+    .sidebar {
+        z-index: 10;
+
+        .blacdot {
+            position: absolute;
+            top: 20px;
+            right: 400px;
+            // padding: 20px;
+            // opacity: 0.5;
+            color: white;
+            font-size: 43px;
+            z-index: 1;
+            border-radius: 50%;
+            transition: opacity 1s;
+
+        }
+
+
+        position: absolute;
+        top: 0;
+        left: -500px;
+        background-color: #3C4048;
+
+        .text {
+            padding: 20px;
+            padding-top: 45px;
+            font-size: 4vw;
+            color: #C0D6DF;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        ul {
+
+            list-style: none;
+            font-size: 20px;
+            font-family: 'Archivo', sans-serif;
+            line-height: 40px;
+            font-weight: bold;
+
+            li {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    // font-size: 2.4vw;
+                    // add max font size
+                    max-width: 70%;
+                    // 
+                    border-left: 4px solid transparent;
+                    padding: 5px;
+
+                    // add hover
+                    &:hover {
+                        color: #C0D6DF;
+                        // background: #0772ff5f;
+                        border-left-color: #C0D6DF;
+                    }
+
+                }
+
+
+                ul {
+                    display: none;
+
+                    li {
+                        padding-left: 22px;
+                    }
+                }
+
+                .palo-show {
+                    display: block;
+                }
+
+                .bd-show {
+                    display: block;
+                }
+
+
+            }
+        }
+
+        padding: 30px;
+        transition: 0.5s;
+
+        border-right: 3px solid #a41818;
+        // border radious
+        border-radius: 0 10px 10px 0;
+        // box shadow
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.556);
+        height: 100%;
+        max-width: 400px;
+        // width: 50%;
+    }
+
+
+    .click {
+        display: none;
+
+    }
+
+    .doubleGrid {
+        @extend grider-2;
+        align-items: end;
+
+        .content {
+            grid-template-columns: 1fr !important;
+            width: 80%;
+        }
+    }
+
+    .singleGrid {
+        @extend grider-1;
+    }
+
+    .maintainer {
+        .container-title {
+            display: flex;
+            width: 100%;
+            padding: 20px 60px;
+            font-family: Rubik;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                z-index: 0;
+                position: relative;
+
+
+                .shade {
+                    // add a tilt
+                    // transform: rotate(-6deg);
+
+                    background: #909ad7;
+                    padding: 10px;
+                    position: relative;
+                    bottom: 16px;
+                    left: 6px;
+                    width: 110%;
+                    z-index: -2;
+
+                }
+            }
+
+            .showstyle {
+                font-size: 22px;
+                text-align: end;
+                // background-color: red;
+                width: 100px;
+            }
+        }
+
+        .container {
+            // @extend grider-1;
+
+
+
+            .loading {
+
+                margin: 50px;
+                padding: 8px 67px;
+                border-radius: 10px;
+                background-color: #042ceea6;
+                // animation: load 1s infinite;
+                transition: all 0.3s;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #263166;
+                }
+
+                .loader {
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    // background-color: black;
+                    border: 5px solid #042ceea6;
+                    border-right-color: white;
+                    animation: load 1s linear infinite;
+                    transition: all 0.3s;
+
+                    * {
+                        display: none;
+                    }
+
+                }
+
+                @keyframes load {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+
+                }
+            }
+
+            &:nth-child(1) {
+                display: grid;
+            }
+
+
+            .content {
+                // display: grid;
+                display: none;
+                width: 75%;
+                grid-template-columns: 1fr 2fr;
+                justify-items: center;
+                align-items: center;
+                // add shadow
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.556);
+
+                .image {
+                    padding-right: 40px;
+
+                    img {
+                        border-radius: 10px;
+                        width: 110%;
+                    }
+
+                    @include tablet {
+                        width: 80%;
+                        // display: flex;
+                        // justify-content: center;
+                    }
+                }
+
+                // 
+                .news {
+                    display: flex;
+                    align-items: center;
+                    padding-left: 10px;
+                    padding-right: 100px;
+
+                    .news-item {
+                        display: flex;
+                        flex-direction: column;
+
+                        .news-header {
+                            font-family: 'Noto Sans Bengali', sans-serif;
+                            font-size: 20px;
+                            // font-weight: bold;
+                            color: #232946;
+                            margin-bottom: 10px;
+                            margin-top: 12px;
+
+                        }
+
+                        .by {
+                            font-family: 'Varela Round', sans-serif;
+                            font-size: 13px;
+                            color: darkkhaki;
+                            padding: 5px;
+                        }
+                    }
+
+                    h2 {
+                        text-align: center;
+                    }
+
+                    @include tablet {
+                        padding-right: 0 !important;
+
+                        p {
+                            font-size: 98%;
+                        }
+                    }
+
+
+
+
+
+                }
+
+                background-color: #fff;
+                padding: 20px;
+                margin: 20px;
+                border: 1px solid #ccc;
+                // add border radius
+                border-radius: 8px;
+
+                @include tablet {
+                    grid-template-columns: 1fr;
+                    width: 80%;
+
+                    .image {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+
+
+
+            .content:nth-child(2),
+            .content:nth-child(3),
+            .content:nth-child(4) {
+                display: grid !important;
+            }
+
+
+
+        }
+    }
+
+
+    // 
+    .header {
+        background: #232946;
+        position: sticky;
+        top: 0;
+
+        .blackdot {
+            position: absolute;
+            color: white;
+            top: 1.5vh;
+            left: 40px;
+            z-index: 1;
+            font-size: 4vh;
+            transition: 0.5s;
+
+        }
+
+        h1 {
+
+            color: white;
+            font-size: 100%;
+            padding: 1%;
+            font-family: cursive;
+            font-size: 3vh;
+
+            text-align: center;
+            font-family: 'Lilita One', cursive;
+            letter-spacing: 2px;
+        }
+    }
+
+
+
+}

@@ -1,0 +1,39 @@
+.h-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+
+    .h-infograph {
+        padding-top: 20%;
+        padding-left: 15%;
+        width: 70%;
+        font-family: Rubik;
+
+        h1 {
+            font-size: 2.5rem;
+            color: #232946;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #000104c7;
+            font-size: 21px !important;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        @include tablet {
+            // padding-top: 30px;
+            padding-right: 10px;
+        }
+
+
+
+    }
+
+
+
+
+
+}

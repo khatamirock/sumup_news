@@ -5,127 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pitch</title>
-    <!-- add css -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+    <title>SumUP-News</title>
+    <!-- add  css from folder-->
     <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="stylesheet" href="../static/css/styl.css">
-    <!-- boostrap  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- boostrap end -->
-    <!-- font-google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Comfortaa&family=Concert+One&family=Pacifico&family=Press+Start+2P&family=Righteous&display=swap"
-        rel="stylesheet">
-    <!-- google end -->
-    <!-- <link rel="stylesheet" href="./styles/styles.css" /> -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="./imports/sidebar.html"> -->
+    <!-- fontawesome -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- googleFont -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@700&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+    </style>
+
 </head>
 
+
 <body>
-    <nav class="navbar navbar-1 navbar-expand-lg navbar-light ">
-        <div class="container-fluid    ">
-            <a class="navbar-brand" href="#">sum_Up</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse  " id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="http://test-summ.herokuapp.com/info">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('instruct') }}">INSTRUCTION</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACT</a>
-                    </li>
-                    <button class="btn">
-                        <a href="{{ url_for('sumup') }}">Log-In</a></button>
-                </ul>
+    <div class="header">
+        <div class="blackdot">
+            <i class='bx bx-menu-alt-left'></i>
+        </div>
+        <h1>SumUP-News</h1>
+    </div>
+    <div class="maintainer">
+        <div class="container-title">
+            <h2>WORLD
+                <div class="shade"></div>
+            </h2>
+            <div class="showstyle">
+                <i class='bx bx-grid-alt'></i>
             </div>
         </div>
-    </nav>
+        {% include 'imports/sidebar.html' %}
+        <div class="container singleGrid">
 
 
-    <!-- hero seciton -->
-    <div class="hero">
-        <div class="hero__container">
-            <div class="hero__container--left">
-                <h1>WE are coming</h1>
-                <h2>Be Prepared</h2>
-                <p>FOR THE EXTRA-TERRISTRIAL EXPREIENCESS</p>
-                <button class="hero__container--btn">
-                    <a href="{{ url_for('sumup') }}">SUM it UP..</a></button>
+            <!-- add for loop -->
+            {% for news in newsls %}
+
+            <div class="content">
+                <div class="image">
+
+                    <img src={{ "https://gumlet.assettype.com/" + news.story['hero-image-s3-key'] }} alt="unknown!!">
+                </div>
+                <div class="news">
+
+                    <div class="news-item">
+                        <h3 class="news-header"> {{news.story.headline}} </h3>
+                        <p>যুক্তরাষ্ট্রের প্রেসিডেন্ট জো বাইডেনের ভাই–বোনসহ ২০০ মার্কিনীর বিরুদ্ধে নিষেধাজ্ঞা জারি
+                            করেছে রাশিয়া। স্থানীয় সময় গত শুক্রবার রুশ পররাষ্ট্র মন্ত্রণালয়ের পক্ষ থেকে এক বিবৃতিতে এ
+                            তথ্য জানানো হয়েছে। খবর রয়টার্স।
+                            বিবৃতিতে বলা হয়েছে, যে ২০০ মার্কিন নাগরিকের বিরুদ্ধে নিষেধাজ্ঞা দেওয়া হয়েছে তাঁরা
+                            রাশিয়ায় ভ্রমণ করতে পারবেন না। এই তালিকায় রয়েছে বাইডেনের বোন ও রাজনৈতিক কৌশলবিদ ভ্যালেরি
+                            বাইডেন ওয়েনসের নাম। তালিকায় আরও রয়েছেন বাইডেনের ভাই জেমস ব্রায়ান বাইডেন ও ফ্রান্সিস
+                            ইউলিয়াম বাইডেন।</p>
+                        <h3 class="by">news from {PALO}</h3>
+                    </div>
+
+                </div>
+
+
             </div>
-            <div class="hero__container--right">
-                <img src="../static/images/img-2.svg" alt="alien" class="hero__container--img" />
-            </div>
+            {% endfor %}
+
+
+
+            {% include './imports/buttons.html' %}
+
+
+
         </div>
+
+
+
     </div>
 
-    <footer id="contact" class="footer">
-        <div class="footer__left">
-            <h2>DEVELOPER</h2>
-            <h1>MD> KHATAMI</h1>
-
-        </div>
-        <div class="footer__right">
-            <div class="contain">
-                <h2>CONTACT: </h2>
-
-
-                <p class="number"> 📞 +088-174_____</p>
-
-                <p style="font-size:  30px"> 📮
-                    <a href="mailto:khatamionik@gmail.com ">KHATAMI.ONIK</a>
-                </p>
-            </div>
-            <div class="social">
-                <!-- create a circular button -->
-
-
-
-                <button>
-                    <a href="https://www.facebook.com/roninreturns">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </button>
-                <button>
-                    <!-- add github -->
-                    <a href="https://github.com/khatamirock" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </button>
-                <button>
-                    <a href="https://www.linkedin.com/in/khatamionik" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </button>
-            </div>
-
-        </div>
-    </footer>
-    <div class="copy">
-        <h3> © khatamionik 2022</h3>
-    </div>
-    <!-- <script src="https:// -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <!-- bootstrp end -->
-    <!-- gsock strart -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <!-- gsock end -->
-    <!-- own jsLib -->
-    <script src="../static/js/main.js"></script>
-
+    <!-- add js -->
+    <script src="../static/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/2d0c151a0a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
