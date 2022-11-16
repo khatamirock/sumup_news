@@ -29,7 +29,7 @@ def name(name):
 @app.route('/')
 def index():
 
-    response = requests.get(paloulr.format(7))
+    response = requests.get(paloulr.format(10))
     jsonResponse = response.json()
     print("Entire JSON response")
     jsonlst = jsonResponse['items']

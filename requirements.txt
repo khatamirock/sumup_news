@@ -7,6 +7,6 @@ MarkupSafe==2.0.1
 dnspython
 json_extract==1.1.2
 numpy==1.21.6
-requests==2.23.0
+requests
 scikit_learn==1.1.3
 
