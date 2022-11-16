@@ -1,5 +1,13 @@
 // import scss
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Koulen&family=Sofia&display=swap');
+
+@font-face {
+    font-family: Monarda;
+    src: url('../fonts/Monarda.ttf') format('truetype');
+}
+
+// fonts||||
 @import '__resol';
 @import '__homestl';
 
@@ -346,11 +354,11 @@ body {
             color: white;
             font-size: 100%;
             padding: 1%;
-            font-family: cursive;
-            font-size: 3vh;
+            // load font from folder
 
+            font-family: Monarda;
+            font-size: 3vh;
             text-align: center;
-            font-family: 'Lilita One', cursive;
             letter-spacing: 2px;
         }
     }
