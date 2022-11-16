@@ -15,7 +15,7 @@ tution = learn('tution', {'tution': 'YES', 'noTution': 'NO'})
 
 edu = learn('edu', {'CSE': tution, 'EEE': 'NO', 'Mecha': tution})
 
-marital = learn('marital', {'married': 'NO', 'bachelor': edu})
+marital = learn('marital', {'married': 'NO', 'bachelor': edu, 'super': 'NO'})
 
 age = learn('age', {'<18': 'YES', '18-36': marital, '>55': fortune})
 
@@ -47,7 +47,7 @@ def treebuild(root, space):
 
     print(spc+'-', root.name)
     for i, child in enumerate(root.children):
-        spc = ' '*(space-prevpos)
+        spc = ' '*(space-prevpos+2)
         charlen = len(child)
         ysn = root.children[child]
         prevpos = linePrinter(postures)
@@ -65,7 +65,7 @@ def treebuild(root, space):
             postures.append(space)
             if i == len(root.children)-1:
                 postures.remove(space)
-            treebuild(ysn,  mline+len(spc)+charlen+2)
+            treebuild(ysn,  mline+len(spc)+charlen)
             if postures:
                 postures.pop(-1)
 

@@ -8,8 +8,9 @@
 * {
     margin: 0;
     padding: 0;
-    user-select: none;
+    // user-select: none;
     box-sizing: border-box;
+    // transition: all 0.3s; 
 }
 
 body {
@@ -162,6 +163,10 @@ body {
                 text-align: end;
                 // background-color: red;
                 width: 100px;
+
+                @include tablet {
+                    display: none;
+                }
             }
         }
 
@@ -307,10 +312,9 @@ body {
             }
 
 
-
+            .content:nth-child(1),
             .content:nth-child(2),
-            .content:nth-child(3),
-            .content:nth-child(4) {
+            .content:nth-child(3) {
                 display: grid !important;
             }
 

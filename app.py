@@ -4,10 +4,12 @@ from flask import Flask, jsonify, request, url_for, redirect, render_template, s
 from pymongo import mongo_client
 from collections import defaultdict
 import json
-
+from pyreqs import objectHandler
+import requests
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'robret-kohler'
+app.config['SECRET_KEY'] = 'ronin-Rock'
+paloulr = 'https://www.prothomalo.com/api/v1/collections/world?limit={}&fields=headline,url,cards,alternative'
 
 
 @app.route('/<name>')
@@ -27,11 +29,23 @@ def name(name):
 @app.route('/')
 def index():
 
-    file = open('./kett.json', 'r', encoding="utf8")
-    f = file.read()
-    objs = json.loads(f)
+    response = requests.get(paloulr.format(7))
+    jsonResponse = response.json()
+    print("Entire JSON response")
+    jsonlst = jsonResponse['items']
 
-    file.close()
+    # file = open('./kett.json', 'r', encoding="utf8")
+    # f = file.read()
+    # objs = json.loads(f)
+    # file.close()
+
+    objs = objectHandler.newsmaker(jsonlst)
+
+    # world = objectHandler.newsmaker(objs)
+    # print(len(world))
+    # print(xx)
+    print(len(objs))
+
     return render_template('index.html', newsls=objs)
 
 
