@@ -17,7 +17,7 @@ def name(name):
     <h2 style="display:block">Hello <h1 style="">{}!</h1></h2>
        <p> here are some instructions .........</br>
         1.get the browser open and install the postMan request plugin-CHrome</br>
-        2. go to the link below and make a post request</br>
+        2. go to the link below and make a potr request</br>
         3. make sure that the request body is in json format</br>
         4. ex: =>> "doc":"YOUR sent............","ratio":sent_number_in _intger </p>
          </div>
