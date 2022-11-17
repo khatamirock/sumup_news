@@ -31,7 +31,7 @@
     </div>
     <div class="maintainer">
         <div class="container-title">
-            <h2>WORLD
+            <h2>{{catg}}
                 <div class="shade"></div>
             </h2>
             <div class="showstyle">
@@ -54,8 +54,10 @@
                     <div class="news-item">
                         <h3 class="news-header"> {{news.title}} </h3>
                         <p>{{news.news}}</p>
-                        <h3 class="by">news from
-                            <a href={{news.newsurl}}> PALO</a> compression Rate : {{news.percent}}%
+                        <h3 class="by">
+                            <span> read more at <a href={{news.newsurl}}> PALO</a> </span>
+
+                            <span id="comprate"> compression Rate : <span> {{news.percent}}%</span></span>
                         </h3>
                     </div>
 

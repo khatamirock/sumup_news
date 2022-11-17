@@ -343,6 +343,22 @@ body .maintainer .container .content .news .news-item .by {
   font-size: 13px;
   color: darkkhaki;
   padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .maintainer .container .content .news .news-item .by #comprate {
+  color: #232946;
+}
+
+body .maintainer .container .content .news .news-item .by #comprate span {
+  font-size: 16px;
+  font-weight: bold;
+  color: lime;
 }
 
 body .maintainer .container .content .news h2 {

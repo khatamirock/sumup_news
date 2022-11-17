@@ -22,6 +22,23 @@ showstyle.addEventListener('click', function () {
 });
 
 
+function requ(paper, cat) {
+    var data = JSON.stringify({
+        "npaper": paper,
+        "catagoty": cat
+    });
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.open("POST", "/");
+    xhr.setRequestHeader("content-type", "application/json");
+    xhr.setRequestHeader("cache-control", "no-cache");
+
+    return xhr.send(data);
+
+}
+
 
 
 
@@ -44,8 +61,38 @@ container.addEventListener('click', function () {
 palo.addEventListener('click', function () {
 
     document.querySelector('.paloclass ul').classList.toggle('palo-show');
-
 });
+
+lsts = document.querySelectorAll('.paloclass ul li');
+
+for (let i = 0; i < lsts.length; i++) {
+    lsts[i].addEventListener('click', function () {
+        cat = lsts[i].textContent;
+        lsts[i].querySelector('a').href = '../' + 'palo/' + cat;
+        // document.querySelector('.paloclass ul').classList.remove('palo-show');
+        paper = lsts[i].parentNode.parentNode.classList.value;
+
+        requ(paper, cat);
+
+
+        // document.querySelector('.paloclass span').innerHTML = this.innerHTML;
+    });
+
+}
+
+
+blsts = document.querySelectorAll('.bdclass  ul li');
+for (let i = 0; i < blsts.length; i++) {
+    blsts[i].addEventListener('click', function () {
+        cat = blsts[i].textContent;
+        blsts[i].querySelector('a').href = '../' + 'bdn/' + cat;;
+        // document.querySelector('.paloclass ul').classList.remove('palo-show');
+        paper = blsts[i].parentNode.parentNode.classList.value;
+        requ(paper, cat);
+        // document.querySelector('.paloclass span').innerHTML = this.innerHTML;
+    });
+
+}
 
 
 bd.addEventListener('click', function () {
@@ -105,6 +152,7 @@ loadbutn.addEventListener('click', function () {
     }
     len += 3;
 });
+
 
 
 

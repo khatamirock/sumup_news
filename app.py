@@ -9,27 +9,45 @@ import requests
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ronin-Rock'
-paloulr = 'https://www.prothomalo.com/api/v1/collections/world?limit={}&fields=headline,url,cards,alternative'
+paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
 
 
-@app.route('/<name>')
-def name(name):
-    return '''
-    <div style="text-align: center;">
-    <h2 style="display:block">Hello <h1 style="">{}!</h1></h2>
-       <p> here are some instructions .........</br>
-        1.get the browser open and install the postMan request plugin-CHrome</br>
-        2. go to the link below and make a post request</br>
-        3. make sure that the request body is in json format</br>
-        4. ex: =>> "doc":"YOUR sent............","ratio":sent_number_in _intger </p>
-         </div>
-        '''.format(name)
+# @app.route('/<name>')
+# def name(name):
+#     return '''
+#     <div style="text-align: center;">
+#     <h2 style="display:block">Hello <h1 style="">{}!</h1></h2>
+#        <p> here are some instructions .........</br>
+#         1.get the browser open and install the postMan request plugin-CHrome</br>
+#         2. go to the link below and make a post request</br>
+#         3. make sure that the request body is in json format</br>
+#         4. ex: =>> "doc":"YOUR sent............","ratio":sent_number_in _intger </p>
+#          </div>
+#         '''.format(name)
+
+@app.route('/home', methods=['GET'])
+def homer():
+    print('in home')
+    return render_template('home.html')
 
 
-@app.route('/')
-def index():
+@app.route('/selector', methods=['POST', 'GET'])
+def selector():
+    if request.method == 'POST':
+        print('in selector!!!!!!!')
+        data = request.get_json()
+        # print(data['npaper'])
+        npaper = data['npaper']
+        catagoty = data['catagoty']
 
-    response = requests.get(paloulr.format(10))
+    return render_template('home.html')
+
+
+@app.route('/<news>/<cat>')
+def index(cat, news):
+
+    print('\n\n????????????????????', cat, news)
+    response = requests.get(paloulr.format(cat, 12))
     jsonResponse = response.json()
     print("Entire JSON response")
     jsonlst = jsonResponse['items']
@@ -46,7 +64,7 @@ def index():
     # print(xx)
     print(len(objs))
 
-    return render_template('index.html', newsls=objs)
+    return render_template('index.html', newsls=objs, catg=cat.upper())
 
 
 if __name__ == '__main__':
