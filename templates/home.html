@@ -15,18 +15,33 @@
         <h1>SumUp</h1>
     </div>
     <div class="h-maintainer">
+
         <div class="h-container">
-            <div class="image">
-                <img src="../static/image/main.png" alt="">
-            </div>
             <div class="h-infograph">
-                <h1>Stay informed in <span>4</span> Lines</h1>
+                <h1>Stay informed in <span>5</span> ✋ Lines</h1>
                 <p>We understand you don't have time to go through long news articles everyday. So we cut the clutter
                     and deliver them, in 60-word shorts. Short news for the mobile generation.</p>
+                <!-- <button class="button-35" role="button">Start Experiencing ! !</button> -->
+                <button class="button-51" role="button">
+                    <a href="{{url_for('index',cat='world',news='palo')}}">Start Experiencing ! !</a>
+                </button>
+
+
+            </div>
+            <div class="h-image">
+                <img src="../static/image/k1.png" alt="">
             </div>
 
         </div>
+
+        <!-- HTML !-->
+
+
+
+
     </div>
+
+    {% include 'imports/footer.html' %}
 
 
 </body>

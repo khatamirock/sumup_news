@@ -19,6 +19,7 @@
     // user-select: none;
     box-sizing: border-box;
     // transition: all 0.3s; 
+    text-decoration: none;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
 
     .sidebar {
         z-index: 10;
+        position: sticky;
 
         .blacdot {
             position: absolute;
@@ -363,6 +365,9 @@ body {
         }
 
         h1 {
+            a {
+                color: white;
+            }
 
             color: white;
             font-size: 100%;

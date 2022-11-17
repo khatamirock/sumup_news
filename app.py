@@ -31,6 +31,11 @@ def homer():
     return render_template('home.html')
 
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+
 @app.route('/selector', methods=['POST', 'GET'])
 def selector():
     if request.method == 'POST':
@@ -46,7 +51,6 @@ def selector():
 @app.route('/<news>/<cat>')
 def index(cat, news):
 
-    print('\n\n????????????????????', cat, news)
     response = requests.get(paloulr.format(cat, 12))
     jsonResponse = response.json()
     print("Entire JSON response")

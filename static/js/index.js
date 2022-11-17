@@ -9,7 +9,13 @@ sidebar = document.querySelector('.sidebar');
 loadbutn = document.querySelector('.loading');
 loaddiv = document.querySelector('.loading div');
 showstyle = document.querySelector('.showstyle');
+sumup = document.querySelector('.header h1');
 // add onclick event
+
+sumup.addEventListener('click', function () {
+    console.log('sumup');
+});
+
 
 showstyle.addEventListener('click', function () {
     console.log('showstyle');

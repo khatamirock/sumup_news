@@ -1,10 +1,32 @@
+@import './buttons';
+
+* {
+    text-decoration: none;
+}
+
 .h-container {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    padding: 40px;
+    justify-items: center;
+
+    .h-image {
+        display: flex;
+        justify-content: center;
+
+        img {
+            margin-top: 50px;
+            width: 250px;
+        }
+
+
+    }
 
     .h-infograph {
         padding-top: 20%;
-        padding-left: 15%;
+        // padding-left: 15%;
+
         width: 70%;
         font-family: Rubik;
 
@@ -23,6 +45,10 @@
             margin-bottom: 20px;
         }
 
+        a {
+            color: black;
+        }
+
         @include tablet {
             // padding-top: 30px;
             padding-right: 10px;
@@ -32,8 +58,64 @@
 
     }
 
+    @include tablet {
+        grid-template-columns: 1fr;
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .h-image {
+            padding-bottom: 10px;
+
+            img {
+                width: 40%;
+            }
+        }
+    }
 
 
 
+
+}
+
+/* CSS */
+
+
+
+
+
+.footer {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background: #232946;
+    padding: 40px;
+    font-family: 'Contrail One';
+    letter-spacing: 1px;
+    align-items: center;
+
+    h2 {
+        color: #fffffe;
+    }
+
+    p {
+        color: #b8c1ec;
+        padding: 7px;
+        font-family: Rubik;
+    }
+}
+
+
+.allr8 {
+    display: flex;
+    justify-content: center;
+    color: #b8c1ec;
+    font-family: 'rubik';
+    padding: 40px;
+
+    font-family: 'Rubik';
+    letter-spacing: 1px;
+    background: #232946;
 
 }
