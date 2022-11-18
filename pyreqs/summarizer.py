@@ -82,7 +82,7 @@ def get_top_sentences(pr_vector, sentences, number):
                 top_sentences += '\n'
             index += 1
 #       print(top_sentences)
-        sorted_pr = sorted_pr[left+1:]
+        sorted_pr = sorted_pr[left:]
         random.shuffle(sorted_pr)
 
         for epoch in range(left):
