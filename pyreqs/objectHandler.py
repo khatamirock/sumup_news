@@ -37,7 +37,7 @@ class objecth:
         similarity_matrix = getSimmat(DOCUMENT)
 
         scores = run_page_rank(similarity_matrix)
-        news = get_top_sentences(scores, DOCUMENT, int(5))
+        news = get_top_sentences(scores, DOCUMENT, int(3))
         sumlen = sum(len(nw.split()) for nw in news)
         self.rawlen = rawlen
         self.sumlen = sumlen
