@@ -67,12 +67,12 @@ def get_top_sentences(pr_vector, sentences, number):
         # it means from big to small... the upper thing was for small to big >>  ascending...............
         sorted_pr.reverse()
         # print(sorted_pr)
-        sorted_pr = sorted_pr[:15]
+        sorted_pr = sorted_pr[:10]
         # print(sorted_pr)
         index = 0
         sorted_pr.sort()
         # print(sorted_pr)
-
+        left = number
         for epoch in range(number//2+2):
             sent = sentences[sorted_pr[index]]
             # sent = normalize_whitespace(sent)
@@ -80,5 +80,15 @@ def get_top_sentences(pr_vector, sentences, number):
             if index % 2 == 0:
                 top_sentences += '\n'
             index += 1
+#       print(top_sentences)
+        sorted_pr = sorted_pr[left+1:]
+        random.shuffle(sorted_pr)
 
+        for epoch in range(left):
+            sent = sentences[sorted_pr[epoch]]
+            # sent = normalize_whitespace(sent)
+            top_sentences += sent+' । '
+            if index % 2 == 0:
+                top_sentences += '\n'
+            index += 1
     return top_sentences
