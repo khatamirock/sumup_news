@@ -67,7 +67,7 @@ def get_top_sentences(pr_vector, sentences, number):
         # it means from big to small... the upper thing was for small to big >>  ascending...............
         sorted_pr.reverse()
         # print(sorted_pr)
-        sorted_pr = sorted_pr[:15]
+        sorted_pr = sorted_pr[:20]
         # print(sorted_pr)
         index = 0
         sorted_pr.sort()
