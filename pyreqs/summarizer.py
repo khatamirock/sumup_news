@@ -3,7 +3,6 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 import random
 
-
 sent = ''
 
 
@@ -37,6 +36,7 @@ def getSimmat(sent):
 def run_page_rank(similarity_matrix):
 
     # constants
+    # constants
     damping = 0.85  # damping coefficient, usually is .85
     min_diff = 1e-5  # convergence threshold
     steps = 100  # iteration steps
@@ -69,7 +69,7 @@ def get_top_sentences(pr_vector, sentences, number):
         # it means from big to small... the upper thing was for small to big >>  ascending...............
         sorted_pr.reverse()
         # print(sorted_pr)
-        sorted_pr = sorted_pr[:16]
+        sorted_pr = sorted_pr[:20]
         # print(sorted_pr)
         index = 0
         sorted_pr.sort()
