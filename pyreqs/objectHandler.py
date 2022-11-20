@@ -32,6 +32,7 @@ class objecth:
             news += str(getobj.get_values("text", deep=True))
             # print(xs)
         DOCUMENT = cleanText(news)
+        print(DOCUMENT)
         rawlen = sum(len(nw.split()) for nw in news)
 
         similarity_matrix = getSimmat(DOCUMENT)
