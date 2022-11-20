@@ -89,7 +89,7 @@ def get_top_sentences(pr_vector, sentences, number):
         sorted_pr = sorted_pr[left:]
         random.shuffle(sorted_pr)
 
-        for epoch in range(left):
+        for epoch in range(left+1):
             try:
                 sent = sentences[sorted_pr[epoch]]
             except:
