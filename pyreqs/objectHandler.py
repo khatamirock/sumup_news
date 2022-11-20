@@ -13,7 +13,7 @@ class objecth:
         try:
             self.image = objs['story']['alternative']['home']['default']['hero-image']['hero-image-url']
         except:
-            self.image = 'ERROR'
+            self.image = '\static\image\defl.jpg'
         # news having multiple ['story-elements'] objects;;;;
         self.news = self.newsmake(objs['story']['cards']).replace(
             '\'', '').replace(']', '').replace('[', '')
