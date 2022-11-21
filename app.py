@@ -12,18 +12,9 @@ app.config['SECRET_KEY'] = 'ronin-Rock'
 paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
 
 
-# @app.route('/<name>')
-# def name(name):
-#     return '''
-#     <div style="text-align: center;">
-#     <h2 style="display:block">Hello <h1 style="">{}!</h1></h2>
-#        <p> here are some instructions .........</br>
-#         1.get the browser open and install the postMan request plugin-CHrome</br>
-#         2. go to the link below and make a post request</br>
-#         3. make sure that the request body is in json format</br>
-#         4. ex: =>> "doc":"YOUR sent............","ratio":sent_number_in _intger </p>
-#          </div>
-#         '''.format(name)
+catdict = {'TECH': 'technology', 'WORLD': 'world',
+           'BD': 'bangladesh', 'SPORT': 'sports'}
+
 
 @app.route('/home', methods=['GET'])
 def homer():
@@ -51,7 +42,7 @@ def selector():
 @app.route('/<news>/<cat>')
 def index(cat, news):
 
-    response = requests.get(paloulr.format(cat, 12))
+    response = requests.get(paloulr.format(catdict[cat], 12))
     jsonResponse = response.json()
     print("Entire JSON response")
     jsonlst = jsonResponse['items']
