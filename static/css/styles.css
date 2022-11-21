@@ -171,15 +171,15 @@
   .h-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    width: 80%;
     margin: 0 auto;
+    padding: 0 !important;
     padding-top: 20px;
   }
   .h-container .h-image {
     padding-bottom: 10px;
   }
   .h-container .h-image img {
-    width: 40%;
+    width: 50%;
   }
 }
 

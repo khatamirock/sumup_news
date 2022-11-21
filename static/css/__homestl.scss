@@ -60,15 +60,15 @@
 
     @include tablet {
         grid-template-columns: 1fr;
-        width: 80%;
         margin: 0 auto;
+        padding: 0 !important;
         padding-top: 20px;
 
         .h-image {
             padding-bottom: 10px;
 
             img {
-                width: 40%;
+                width: 50%;
             }
         }
     }

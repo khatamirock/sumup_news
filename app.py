@@ -13,7 +13,7 @@ paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=head
 
 
 catdict = {'TECH': 'technology', 'WORLD': 'world',
-           'BD': 'bangladesh', 'SPORT': 'sports'}
+           'BD': 'bangladesh'}
 
 
 @app.route('/home', methods=['GET'])
@@ -52,7 +52,7 @@ def index(cat, news):
     # objs = json.loads(f)
     # file.close()
 
-    objs = objectHandler.newsmaker(jsonlst)
+    objs = objectHandler.newsmaker(jsonlst, paper=news)
 
     # world = objectHandler.newsmaker(objs)
     # print(len(world))

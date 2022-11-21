@@ -6,7 +6,7 @@ import re
 regex = re.compile(r'<[^>]+>')
 
 
-class objecth:
+class paloNews:
     def __init__(self, objs):
         self.title = objs['story']['headline']
         #
@@ -47,10 +47,12 @@ class objecth:
         return regex.sub('', news)
 
 
-def newsmaker(lsts):
+def newsmaker(lsts, paper='palo'):
     newsObjs = []
-    for news in lsts:
-        # print(news['story']['headline'])
-        newsObjs.append(objecth(news))
-
+    if paper == 'palo':
+        for news in lsts:
+            # print(news['story']['headline'])
+            newsObjs.append(paloNews(news))
+    else:
+        pass
     return newsObjs
