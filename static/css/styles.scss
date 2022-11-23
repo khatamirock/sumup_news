@@ -248,10 +248,15 @@ body {
                     img {
                         border-radius: 10px;
                         width: 110%;
+
+                        @include tablet {
+                            width: 100%;
+                        }
                     }
 
                     @include tablet {
-                        width: 80%;
+                        width: 85%;
+                        padding: 0 !important;
                         // display: flex;
                         // justify-content: center;
                     }
@@ -307,7 +312,7 @@ body {
                         padding-right: 0 !important;
 
                         p {
-                            font-size: 98%;
+                            font-size: 82%;
                         }
                     }
 
@@ -326,7 +331,7 @@ body {
 
                 @include tablet {
                     grid-template-columns: 1fr;
-                    width: 80%;
+                    width: 95%;
 
                     .image {
                         padding-bottom: 10px;
