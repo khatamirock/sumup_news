@@ -248,15 +248,10 @@ body {
                     img {
                         border-radius: 10px;
                         width: 110%;
-
-                        @include tablet {
-                            width: 100%;
-                        }
                     }
 
                     @include tablet {
-                        width: 85%;
-                        padding: 0 !important;
+                        width: 80%;
                         // display: flex;
                         // justify-content: center;
                     }
@@ -312,7 +307,7 @@ body {
                         padding-right: 0 !important;
 
                         p {
-                            font-size: 82%;
+                            font-size: 85%;
                         }
                     }
 

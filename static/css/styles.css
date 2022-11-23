@@ -491,15 +491,8 @@ body .maintainer .container .content .image img {
 }
 
 @media (max-width: 1000px) {
-  body .maintainer .container .content .image img {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1000px) {
   body .maintainer .container .content .image {
-    width: 85%;
-    padding: 0 !important;
+    width: 80%;
   }
 }
 
@@ -564,7 +557,7 @@ body .maintainer .container .content .news h2 {
     padding-right: 0 !important;
   }
   body .maintainer .container .content .news p {
-    font-size: 82%;
+    font-size: 85%;
   }
 }
 
