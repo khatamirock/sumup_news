@@ -6,6 +6,26 @@ import re
 regex = re.compile(r'<[^>]+>')
 
 
+class bbcNews:
+    def __init__(self, objs):
+        try:
+            self.title = objs['promo']['headlines']['seoHeadline']
+        except:
+            pass
+        #
+        try:
+            self.image = 'https://ichef.bbci.co.uk/news/640/cpsprodpb/' + \
+                objs['promo']['images']['defaultPromoImage']['blocks'][3]['locator']
+        except:
+            self.image = '\static\image\defl.jpg'
+
+        self.news = 'NEWS FORMAT NOT FOUND !!!!!!!!!!!!'
+        self.newsurl = objs['promo']['locators']
+        # self.rawlen
+        # self.sumlen
+        self.percent = 0
+
+
 class paloNews:
     def __init__(self, objs):
         self.title = objs['story']['headline']
@@ -54,5 +74,7 @@ def newsmaker(lsts, paper='palo'):
             # print(news['story']['headline'])
             newsObjs.append(paloNews(news))
     else:
-        pass
+        for news in lsts:
+            newsObjs.append(bbcNews(news))
+
     return newsObjs

@@ -3,6 +3,7 @@ console.log('test js');
 container = document.querySelector('.container');
 palo = document.querySelector('.palo');
 bd = document.querySelector('.bd');
+bbc = document.querySelector('.bbc');
 blackdot = document.querySelector('.blackdot');
 blacdot = document.querySelector('.sidebar .blacdot');
 sidebar = document.querySelector('.sidebar');
@@ -78,7 +79,7 @@ for (let i = 0; i < lsts.length; i++) {
         // document.querySelector('.paloclass ul').classList.remove('palo-show');
         paper = lsts[i].parentNode.parentNode.classList.value;
 
-        requ(paper, cat);
+        // requ(paper, cat);
 
 
         // document.querySelector('.paloclass span').innerHTML = this.innerHTML;
@@ -161,4 +162,9 @@ loadbutn.addEventListener('click', function () {
 
 
 
+bbc.addEventListener('click', function () {
+    console.log('BBBCCCC');
+    bbc.querySelector('a').href = '../bbc/Headlines';
 
+
+});

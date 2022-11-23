@@ -10,7 +10,7 @@ import requests
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ronin-Rock'
 paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
-
+bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 
 catdict = {'TECH': 'technology', 'WORLD': 'world',
            'BD': 'bangladesh'}
@@ -41,11 +41,17 @@ def selector():
 
 @app.route('/<news>/<cat>')
 def index(cat, news):
+    if news == 'palo':
+        response = requests.get(paloulr.format(catdict[cat], 12))
+        jsonResponse = response.json()
+        print("Entire JSON response")
+        jsonlst = jsonResponse['items']
+    if news == 'bbc':
+        response = requests.get(bbcurl)
+        jsonResponse = response.json()
 
-    response = requests.get(paloulr.format(catdict[cat], 12))
-    jsonResponse = response.json()
-    print("Entire JSON response")
-    jsonlst = jsonResponse['items']
+        jsonlst = jsonResponse['records']
+        # return jsonResponse
 
     # file = open('./kett.json', 'r', encoding="utf8")
     # f = file.read()
