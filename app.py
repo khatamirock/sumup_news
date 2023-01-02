@@ -6,7 +6,7 @@ from collections import defaultdict
 import json
 from pyreqs import objectHandler
 import requests
-
+# from !!rock
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ronin-Rock'
 paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
