@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = 'ronin-Rock'
 paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
 bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 
-catdict = {'TECH': 'technology', 'WORLD': 'world',
+catdict = {'TECH': 'technology', 'LATEST': 'latest',
            'BD': 'bangladesh'}
 
 

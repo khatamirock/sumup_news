@@ -71,7 +71,7 @@ def newsmaker(lsts, paper='palo'):
     newsObjs = []
     if paper == 'palo':
         for news in lsts:
-            # print(news['story']['headline'])
+            print(news['story']['headline'])
             newsObjs.append(paloNews(news))
     else:
         for news in lsts:
