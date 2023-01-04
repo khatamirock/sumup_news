@@ -78,26 +78,19 @@ def index(cat, news):
         jsonlst = jsonResponse['items']
 
     if news == 'bdn':
-        print('BDD')
+
         response = requests.get(bdnwsurl.format(bdcatdict[cat], 9))
         jsonResponse = response.json()
         print("Entire JSON response")
         jsonlst = jsonResponse['items']
 
     if news == 'bbc':
-        print('BBC')
         response = requests.get(bbcurl)
         jsonResponse = response.json()
 
         jsonlst = jsonResponse['records']
-        # return jsonResponse
 
-    objs = objectHandler.newsmaker(jsonlst, paper=news)
-
-    # world = objectHandler.newsmaker(objs)
-    # print(len(world))
-    # print(xx)
-    print(len(objs))
+    objs = objectHandler.newsmaker(jsonlst, news)
 
     return render_template('index.html', newsls=objs, catg=cat.upper(), newsname=news)
 

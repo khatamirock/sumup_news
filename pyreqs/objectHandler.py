@@ -32,7 +32,7 @@ class bdnews:
             news += str(getobj.get_values("text", deep=True))
             # print(xs)
         DOCUMENT = cleanText(news)
-        print(DOCUMENT)
+        # print(DOCUMENT)
         rawlen = sum(len(nw.split()) for nw in news)
 
         similarity_matrix = getSimmat(DOCUMENT)
@@ -93,7 +93,7 @@ class paloNews:
             news += str(getobj.get_values("text", deep=True))
             # print(xs)
         DOCUMENT = cleanText(news)
-        print(DOCUMENT)
+        # print(DOCUMENT)
         rawlen = sum(len(nw.split()) for nw in news)
 
         similarity_matrix = getSimmat(DOCUMENT)
@@ -108,9 +108,11 @@ class paloNews:
         return regex.sub('', news)
 
 
-def newsmaker(lsts, paper='palo'):
+def newsmaker(lsts, paper):
     newsObjs = []
+    print('>>>>>>>>>>>>>>>>>>>>>>>>\n\n\n\n\n\n\n>>>>>', paper)
     if paper == 'palo':
+        print('paloeee')
         for news in lsts:
             # print(news['story']['headline'])
             newsObjs.append(paloNews(news))
@@ -118,7 +120,8 @@ def newsmaker(lsts, paper='palo'):
         for news in lsts:
             newsObjs.append(bdnews(news))
 
-    else:
+    if paper == 'bbc':
+        print('BCC')
         for news in lsts:
             newsObjs.append(bbcNews(news))
 
