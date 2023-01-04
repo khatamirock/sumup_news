@@ -10,10 +10,40 @@ import requests
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ronin-Rock'
 paloulr = 'https://www.prothomalo.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,alternative'
-bbcurl = 'https://www.bbc.com/bengali/mostread.json'
+bdnwsurl = 'https://bangla.bdnews24.com/api/v1/collections/{}?limit={}&fields=headline,url,cards,hero-image-s3-key'
 
-catdict = {'TECH': 'technology', 'LATEST': 'latest',
-           'BD': 'bangladesh'}
+bbcurl = 'https://www.bbc.com/bengali/mostread.json'
+# palo world update->> https://www.prothomalo.com/api/v1/collections/world-rest15?limit=10&fields=headline,url,cards,alternative
+# https://bangla.bdnews24.com/api/v1/collections/105128?limit=8&fields=headline
+#                                             105128->>বাণিজ্য
+#                                               105129->>খেলা
+#                                               105130->>বিনোদন
+#                                               105131->>বিশ্ব
+#                                               105132->>বাংলাদেশ
+#                                               105133->>স্বাস্থ্য
+#                                               105134->>প্রবাস
+#                                               105135->>প্রযুক্তি
+#                                               105136->>লাইফস্টাইল
+#                                               105137->>বিজ্ঞান
+#                                               105138->>সাহিত্য
+#                                               105139->>কলাম
+#                                               105140->>বিশেষ প্রতিবেদন
+#                                               105141->>সাম্প্রতিক খবর
+#                                               105142->>সাম্প্রতিক সংবাদ
+
+# https://bangla.bdnews24.com/api/v1/collections/110199?limit=8&fields=headline
+
+
+pcatdict = {'TECH': 'technology', 'LATEST': 'latest',
+            'BD': 'bangladesh',
+            'WORLD': 'world-rest15'
+            }
+
+
+bdcatdict = {'TECH': '109765', 'LATEST': '109765',
+             'BD': '109765',
+             'WORLD': 'world-grid'
+             }
 
 
 @app.route('/home', methods=['GET'])
@@ -42,21 +72,25 @@ def selector():
 @app.route('/<news>/<cat>')
 def index(cat, news):
     if news == 'palo':
-        response = requests.get(paloulr.format(catdict[cat], 12))
+        response = requests.get(paloulr.format(pcatdict[cat], 12))
         jsonResponse = response.json()
         print("Entire JSON response")
         jsonlst = jsonResponse['items']
+
+    if news == 'bdn':
+        print('BDD')
+        response = requests.get(bdnwsurl.format(bdcatdict[cat], 9))
+        jsonResponse = response.json()
+        print("Entire JSON response")
+        jsonlst = jsonResponse['items']
+
     if news == 'bbc':
+        print('BBC')
         response = requests.get(bbcurl)
         jsonResponse = response.json()
 
         jsonlst = jsonResponse['records']
         # return jsonResponse
-
-    # file = open('./kett.json', 'r', encoding="utf8")
-    # f = file.read()
-    # objs = json.loads(f)
-    # file.close()
 
     objs = objectHandler.newsmaker(jsonlst, paper=news)
 
@@ -65,7 +99,7 @@ def index(cat, news):
     # print(xx)
     print(len(objs))
 
-    return render_template('index.html', newsls=objs, catg=cat.upper())
+    return render_template('index.html', newsls=objs, catg=cat.upper(), newsname=news)
 
 
 if __name__ == '__main__':
