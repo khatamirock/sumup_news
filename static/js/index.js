@@ -92,7 +92,7 @@ blsts = document.querySelectorAll('.bdclass  ul li');
 for (let i = 0; i < blsts.length; i++) {
     blsts[i].addEventListener('click', function () {
         cat = blsts[i].textContent;
-        blsts[i].querySelector('a').href = '../' + 'bdn/' + cat;;
+        blsts[i].querySelector('a').href = '../' + 'bdn/' + cat;
         // document.querySelector('.paloclass ul').classList.remove('palo-show');
         paper = blsts[i].parentNode.parentNode.classList.value;
         requ(paper, cat);
