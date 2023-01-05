@@ -11,7 +11,7 @@ class bdnews:
         self.title = objs['story']['headline']
         #
         try:
-            self.image = objs['story']['hero-image-s3-key']
+            self.image ="https://gumlet.assettype.com/" +  objs['story']['hero-image-s3-key']
         except:
             self.image = '\static\image\defl.jpg'
         # news having multiple ['story-elements'] objects;;;;
@@ -110,9 +110,9 @@ class paloNews:
 
 def newsmaker(lsts, paper):
     newsObjs = []
-    print('>>>>>>>>>>>>>>>>>>>>>>>>\n\n\n\n\n\n\n>>>>>', paper)
+    # print('>>>>>>>>>>>>>>>>>>>>>>>>\n\n\n\n\n\n\n>>>>>', paper)
     if paper == 'palo':
-        print('paloeee')
+        # print('paloeee')
         for news in lsts:
             # print(news['story']['headline'])
             newsObjs.append(paloNews(news))
@@ -121,7 +121,7 @@ def newsmaker(lsts, paper):
             newsObjs.append(bdnews(news))
 
     if paper == 'bbc':
-        print('BCC')
+        # print('BCC')
         for news in lsts:
             newsObjs.append(bbcNews(news))
 
