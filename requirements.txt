@@ -8,5 +8,5 @@ dnspython
 json_extract==1.1.2
 numpy==1.21.6
 requests
-scikit_learn==1.1.3
+scikit_learn
 
