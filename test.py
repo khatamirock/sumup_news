@@ -7,6 +7,7 @@ class learn:
     def __init__(self, name='', children={}):
         self.name = name
         self.children = children
+##whayyyy
 
 
 fortune = learn('Fortune', {'vast': 'YES', 'medium': 'YES', 'little': 'NO'})
