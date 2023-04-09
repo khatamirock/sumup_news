@@ -57,7 +57,8 @@ def treebuild(root, space):
             strappend += spc+' +'+'-' * mline + \
                 '-{}=>({})'.format(child, ysn) + '\n'
             print(spc, '+', '-' *
-                  mline, '-{}=>({})'.format(child, ysn))
+#                   mline, '-{}=>({})'.format(child, ysn))
+                    mline, '-{}=>({})'.format(child, ysn))
 
         else:
             strappend += spc + ' |+' + '-' * \
