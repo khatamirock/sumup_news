@@ -17,10 +17,10 @@ bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 # https://bangla.bdnews24.com/api/v1/collections/105128?limit=8&fields=headline
 #                                             105128->>বাণিজ্য
 #                                               105129->>খেলা
-#                                               105130->>বিনোদন
+#         105130->>বিনোদন
 #                                               105131->>বিশ্ব
 #                                               105132->>বাংলাদেশ
-#                                               105133->>স্বাস্থ্য
+#        105133->>স্বাস্থ্য
 #                                               105134->>প্রবাস
 #                                               105135->>প্রযুক্তি
 #                                               105136->>লাইফস্টাইল
@@ -34,9 +34,10 @@ bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 # https://bangla.bdnews24.com/api/v1/collections/110199?limit=8&fields=headline
 
 
-pcatdict = {'TECH': '41755', 'LATEST': 'latest',
+pcatdict = {'TECH': '41755', 'FEATURED': '35495',
             'BD': 'bangladesh',
-            'WORLD': '120783'
+            'WORLD': '120783',
+            'Uncatagorized':"41525"
             }
 
 
