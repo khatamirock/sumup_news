@@ -22,9 +22,10 @@
                 <p>We understand you don't have time to go through long news articles everyday. So we cut the clutter
                     and deliver them, in 60-word shorts. Short news for the mobile generation.</p>
                 <!-- <button class="button-35" role="button">Start Experiencing ! !</button> -->
-                <button class="button-51" role="button">
-                    <a href="{{url_for('index',cat='LATEST',news='palo')}}">Start Experiencing ! !</a>
-                </button>
+                <a href="{{ url_for('index', cat='MOSTREAD', news='palo') }}" class="button-link">
+                    <button class="button-51" role="button">Start Experiencing ! !</button>
+                </a>
+                
 
 
             </div>
