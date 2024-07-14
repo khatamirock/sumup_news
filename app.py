@@ -34,12 +34,12 @@ bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 # https://bangla.bdnews24.com/api/v1/collections/110199?limit=8&fields=headline
 
 
-pcatdict = {'TECH': '41755', 'FEATURED': '35495',
+pcatdict = {'MOSTREAD': '41755', 'FEATURED': '35495',
             'BD': 'bangladesh',
             'WORLD': '120783',
             'Uncatagorized':"41525"
             }
-
+ 
 
 bdcatdict = {'TECH': '109765', 'LATEST': '109765',
              'BD': '109765',
