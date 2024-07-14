@@ -88,7 +88,10 @@ class paloNews:
             self.percent = 0
         else:
             self.title = story.get('headline', 'Default Title')
-            self.image = story.get('alternative', {}).get('home', {}).get('default', {}).get('hero-image', {}).get('hero-image-url', '\static\image\defl.jpg')
+            try:
+                self.image = story.get('alternative', {}).get('home', {}).get('default', {}).get('hero-image', {}).get('hero-image-url', '\static\image\defl.jpg')
+            except:
+                self.image = '\static\image\defl.jpg'
             self.news = self.newsmake(story.get('cards', [])).replace('\'', '').replace(']', '').replace('[', '')
             self.newsurl = story.get('url', '')
     
