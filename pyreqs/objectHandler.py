@@ -8,7 +8,7 @@ regex = re.compile(r'<[^>]+>')
 
 class bdnews:
     def __init__(self, objs):
-        self.title = objs['story']['headline']
+        self.title = objs['story']['headline'][1:]
         #
         try:
             self.image ="https://gumlet.assettype.com/" +  objs['story']['hero-image-s3-key']
