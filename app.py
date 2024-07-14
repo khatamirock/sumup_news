@@ -34,9 +34,9 @@ bbcurl = 'https://www.bbc.com/bengali/mostread.json'
 # https://bangla.bdnews24.com/api/v1/collections/110199?limit=8&fields=headline
 
 
-pcatdict = {'TECH': 'technology', 'LATEST': 'latest',
+pcatdict = {'TECH': '41755', 'LATEST': 'latest',
             'BD': 'bangladesh',
-            'WORLD': 'world-rest15'
+            'WORLD': '120783'
             }
 
 
@@ -72,7 +72,12 @@ def selector():
 @app.route('/<news>/<cat>')
 def index(cat, news):
     if news == 'palo':
+
         response = requests.get(paloulr.format(pcatdict[cat], 12))
+        
+        print('\n\n\n',cat,'\n\n\n')
+        print('\n\n\n',response,'\n\n\n')
+
         jsonResponse = response.json()
         print("Entire JSON response")
         jsonlst = jsonResponse['items']

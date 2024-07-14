@@ -6,7 +6,7 @@ gunicorn==20.1.0
 MarkupSafe==2.0.1
 dnspython
 json_extract==1.1.2
-numpy==1.21.6
+numpy
 requests
 scikit_learn
 
