@@ -69,66 +69,58 @@ class bbcNews:
         self.percent = 0
 
 
+
+
+regex = re.compile(r'<[^>]+>')
+
 class paloNews:
     def __init__(self, objs):
+        print(len(objs))
         
-        print(objs)
-        objs=objs[1:]
-        
-        self.title = objs['story']['headline']
-        #
-        try:
-            self.image = objs['story']['alternative']['home']['default']['hero-image']['hero-image-url']
-        except:
+        story = objs.get('story')
+        if story is None:
+            self.title = 'Default Title'
             self.image = '\static\image\defl.jpg'
-        # news having multiple ['story-elements'] objects;;;;
-        self.news = self.newsmake(objs['story']['cards']).replace(
-            '\'', '').replace(']', '').replace('[', '')
-        self.newsurl = objs['story']['url']
-        self.rawlen
-        self.sumlen
-        self.percent
-
-        # self.image = "https://gumlet.assettype.com/" + \
-        #     objs['story']['hero-image-s3-key']
+            self.news = 'No news available'
+            self.newsurl = ''
+            self.rawlen = 0
+            self.sumlen = 0
+            self.percent = 0
+        else:
+            self.title = story.get('headline', 'Default Title')
+            self.image = story.get('alternative', {}).get('home', {}).get('default', {}).get('hero-image', {}).get('hero-image-url', '\static\image\defl.jpg')
+            self.news = self.newsmake(story.get('cards', [])).replace('\'', '').replace(']', '').replace('[', '')
+            self.newsurl = story.get('url', '')
+    
     def newsmake(self, cards):
         news = ''
         for card in cards:
             getobj = GetValue2(card)
-            # print('\n\n\n', cards)
             news += str(getobj.get_values("text", deep=True))
-            # print(xs)
         DOCUMENT = cleanText(news)
-        # print(DOCUMENT)
         rawlen = sum(len(nw.split()) for nw in news)
 
         similarity_matrix = getSimmat(DOCUMENT)
-
         scores = run_page_rank(similarity_matrix)
         news = get_top_sentences(scores, DOCUMENT, int(3))
         sumlen = sum(len(nw.split()) for nw in news)
         self.rawlen = rawlen
         self.sumlen = sumlen
-        self.percent = int(((rawlen-sumlen)/rawlen)*100)
+        self.percent = int(((rawlen - sumlen) / rawlen) * 100)
 
         return regex.sub('', news)
 
+# Other classes remain unchanged
 
 def newsmaker(lsts, paper):
     newsObjs = []
-    # print('>>>>>>>>>>>>>>>>>>>>>>>>\n\n\n\n\n\n\n>>>>>', paper)
     if paper == 'palo':
-        # print('paloeee')
-        for news in lsts:
-            # print(news['story']['headline'])
+        for news in lsts[1:]:
             newsObjs.append(paloNews(news))
-    if paper == 'bdn':
+    elif paper == 'bdn':
         for news in lsts:
             newsObjs.append(bdnews(news))
-
-    if paper == 'bbc':
-        # print('BCC')
+    elif paper == 'bbc':
         for news in lsts:
             newsObjs.append(bbcNews(news))
-
     return newsObjs
